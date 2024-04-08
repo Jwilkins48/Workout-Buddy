@@ -31,7 +31,7 @@ const createWorkout = async (req, res) => {
   }
 
   try {
-    const user_id = req.user_id;
+    const user_id = req.user._id;
     const workout = await Workout.create({ title, load, reps, user_id });
     res.status(201).json(workout);
   } catch (error) {
